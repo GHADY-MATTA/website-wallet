@@ -18,8 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($user) {
         if (password_verify($_POST["password"], $user["password_hash"])) {
-            echo "Login success! <a href='/website-wallet/front/profile.html'>go to profile page</a>";
-            
+            // Login success: Set the user ID in the session
+            $_SESSION["user_id"] = $user["id"];  // Store the user's ID in session
+
+            // Redirect to the profile page
+            header("Location: /website-wallet/front/profile.html");
             exit;
         }
     }
