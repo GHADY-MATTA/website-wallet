@@ -15,7 +15,8 @@ if (isset($_POST['tier'])) {
     $tier = $_POST['tier'];
 
     // Prepare the SQL query to update the tier for the user
-    $query = "UPDATE usersMail SET tier = ? WHERE id = ?";
+    $query = "UPDATE usersMail SET tier = ?, tier_change_time = CURRENT_TIMESTAMP WHERE id = ?";
+
 
     // Use prepared statements to avoid SQL injection
     if ($stmt = $conn->prepare($query)) {

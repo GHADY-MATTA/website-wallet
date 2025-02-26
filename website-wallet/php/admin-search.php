@@ -13,12 +13,12 @@ if (isset($_GET['keyword'])) {
     $sql = "SELECT * FROM usersmail WHERE username LIKE '%$keyword%'"; // Replace 'users' and 'name' with your table/column
     $result = $conn->query($sql);
 
-   if ($result->num_rows > 0) {
+ if ($result->num_rows > 0) {
         // Wrapper div for horizontal scroll
         $output = "<div style='overflow-x:auto;'>";
         $output .= "<table border='1' cellpadding='5' cellspacing='0'>";
         
-        // Corrected column order
+        // Corrected column order, added column for 'Tier Change Time'
         $output .= "<tr>
                         <th>ID</th>
                         <th>Username</th>
@@ -31,6 +31,7 @@ if (isset($_GET['keyword'])) {
                         <th>Profile Picture</th>
                         <th>Tier</th>
                         <th>Balance</th>
+                        <th>Tier Change Time</th> <!-- New column for timestamp -->
                     </tr>";
         
         // Loop through each row and output data in the correct order
@@ -47,6 +48,8 @@ if (isset($_GET['keyword'])) {
             $output .= "<td>" . $row['profile_picture'] . "</td>";
             $output .= "<td>" . $row['tier'] . "</td>";
             $output .= "<td>" . $row['balance'] . "</td>";
+            $output .= "<td>" . $row['tier_change_time'] . "</td>"; 
+            //  <!-- Display the timestamp --!>
             $output .= "</tr>";
         }
         $output .= "</table>";
