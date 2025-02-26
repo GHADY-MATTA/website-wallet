@@ -3,8 +3,22 @@ session_start(); // Start the session at the beginning
 
 $is_valid = true;
 
+// Admin credentials (hardcoded)
+$admin_email = "admin@gmail.com";
+$admin_password = "52556266Aa@"; // Admin password
+
 // Process the login form
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    // First, check if the user is the admin
+    if ($_POST["email"] === $admin_email && $_POST["password"] === $admin_password) {
+        // Admin login: Set session and redirect to admin page
+        $_SESSION["user_id"] = 1; // Admin user_id (can be set to 1 or any constant value)
+        header("Location: /website-wallet/front/admin.html");
+        exit;
+    }
+
+    // If not admin, proceed with normal user login
     $mysqli = require __DIR__ . "/save-sql.php";
 
     // Use a prepared statement to prevent SQL injection

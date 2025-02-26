@@ -1,7 +1,12 @@
+
+      
 document.addEventListener("DOMContentLoaded", async () => {
+    console.log("hello my friend");
     try {
         const response = await fetch("/website-wallet/php/profileData.php");
         const data = await response.json();
+        console.log(data);
+        
 
         if (data.error) {
             window.location.href = "/website-wallet/front/login.html"; // Redirect if not logged in
@@ -13,6 +18,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.getElementById("email").textContent = data.email;
         document.getElementById("phone").textContent = data.phone || "Not Provided";
         document.getElementById("address").textContent = data.address || "Not Provided";
+
+ // Update balance
+        // Update balance
+document.getElementById("balance").textContent = data.balance ? `$${data.balance}` : "$1";  // Show balance or default to $1
+  // Default to $1 if no balance found
 
         // Update greeting message
         document.getElementById("greeting").textContent = "Welcome, " + data.username;
