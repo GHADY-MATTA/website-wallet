@@ -8,6 +8,11 @@ if($link->connect_errno){
     die("Failed to connect to MySQL: " . $link->connect_error);
 }
 
+
+
+
+
+
 // Return the connection object
 return $link;
 
