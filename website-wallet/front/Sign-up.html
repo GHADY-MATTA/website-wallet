@@ -30,7 +30,7 @@
         </div>
 
         <div class="div-form">
-            <form action="/website-wallet/php/Sign-up.php" method="post" novalidate>
+            <form action="/website-wallet/php/Sign-up.php" method="post" enctype="multipart/form-data"  novalidate>
 
                 <!-- Username Field -->
                 <label for="username">Username</label>
@@ -53,16 +53,21 @@
                 <!-- Password Confirmation Field-->
                 <label for="password_confirmation">Confirm Password</label>
                 <input type="password" id="password_confirmation" name="password_confirmation"
-                    placeholder="Confirm your password" required> 
+                    placeholder="Confirm your password" required>
 
 
-<!-- Phone Field -->
-<label for="phone">Phone Number</label>
-<input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                <!-- Phone Field -->
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
 
-<!-- Address Field -->
-<label for="address">Address</label>
-<input type="text" id="address" name="address" placeholder="Enter your address">
+                <!-- Address Field -->
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" placeholder="Enter your address">
+
+
+               <!-- File Upload Field for ID Picture -->
+<label for="profile_picture">ID Picture</label>
+<input type="file" id="profile_picture" name="profile_picture" placeholder="Choose ID picture" accept="image/*" >
 
 
                 <!-- Optional Checkbox for Updates -->
@@ -86,7 +91,7 @@
                 <div class="sign-up">
                     <input type="submit" value="Sign Up">
                 </div>
-                
+
             </form>
         </div>
 

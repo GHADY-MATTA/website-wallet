@@ -38,7 +38,6 @@ if (isset($_POST["phone"]) && !preg_match("/^\+?[1-9]\d{7,14}$/", $_POST["phone"
     die("Invalid phone number");
 }
 
-
 // Validating address (optional, if provided)
 if (isset($_POST["address"]) && empty(trim($_POST["address"]))) {
     die("Address is required");
@@ -55,12 +54,30 @@ if ($mysqli->connect_error) {
     die("Database connection failed: " . $mysqli->connect_error);
 }
 
+// Handle image upload
+$profile_picture = null; // Default value
+
+if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] === UPLOAD_ERR_OK) {
+    $uploadDir = 'uploads/profile_pictures/';
+    if (!is_dir($uploadDir)) {
+        mkdir($uploadDir, 0777, true); // Create the directory if it doesn't exist
+    }
+    
+    $fileName = basename($_FILES['profile_picture']['name']);
+    $filePath = $uploadDir . uniqid() . '_' . $fileName; // Ensure unique file name
+    if (move_uploaded_file($_FILES['profile_picture']['tmp_name'], $filePath)) {
+        $profile_picture = $filePath; // Save the file path
+    } else {
+        die("Error uploading file.");
+    }
+}
+
 // Determine the newsletter preference
 $newsletter_preference = isset($_POST["no-updates"]) ? 'no-news' : 'send-news';
 
-// Prepare the SQL query with the news_letter, phone, and address columns
-$sql = "INSERT INTO usersMail (username, email, password_hash, news_letter, phone, address) 
-        VALUES(?,?,?,?,?,?)";
+// Prepare the SQL query with the profile_picture column
+$sql = "INSERT INTO usersMail (username, email, password_hash, news_letter, phone, address, profile_picture) 
+        VALUES(?,?,?,?,?,?,?)";
 $stmt = $mysqli->prepare($sql);
 
 // Check for errors in preparing the query
@@ -68,8 +85,8 @@ if(!$stmt){
     die("Query preparation failed: " . $mysqli->error);
 }
 
-// Bind the form data to the prepared statement, including the newsletter preference, phone, and address
-$stmt->bind_param("ssssss", $_POST["username"], $_POST["email"], $password, $newsletter_preference, $_POST["phone"], $_POST["address"]);
+// Bind the form data to the prepared statement, including the profile picture
+$stmt->bind_param("sssssss", $_POST["username"], $_POST["email"], $password, $newsletter_preference, $_POST["phone"], $_POST["address"], $profile_picture);
 
 // Execute the query
 if($stmt->execute()){
