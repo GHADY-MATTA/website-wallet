@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["user_id"] = $user["id"];  // Store the user's ID in session
 
             // Redirect to the profile page
-            header("Location: /website-wallet/front/profile.html");
+             header("Location: /website-wallet/front/profile.html?id=" . $user["id"]);
             exit;
         }
     }
