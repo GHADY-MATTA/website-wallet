@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+
+
+</style>
+
+
+<body>
+
+    <section>
+        <div class="title">
+            <h1>Sign Up</h1>
+        </div>
+
+        <div class="mini-title">
+            <h5>Create a Free Account or <a href="login.html">Log in</a></h5>
+        </div>
+<!-- \website-wallet\server(api)\php\Sign-up.php -->
+        <div class="div-form">
+            <form action="/website-wallet/server(api)/php/Sign-up.php" method="post" enctype="multipart/form-data"  novalidate>
+
+                <!-- Username Field -->
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+                <!-- Email Field -->
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="yourname@example.com" required>
+
+                <!-- Password Field -->
+
+                <div class="password-container">
+                    <label for="password">Password</label>
+                    <!-- Eye Icon to toggle password visibility -->
+                    <i class="far fa-eye" id="eye-icon" onclick="togglePassword()"></i>
+                    <input type="password" id="password" name="password"
+                        placeholder="At least 8 characters, 1 number, 1 uppercase, 1 special character" required>
+
+                </div>
+                <!-- Password Confirmation Field-->
+                <label for="password_confirmation">Confirm Password</label>
+                <input type="password" id="password_confirmation" name="password_confirmation"
+                    placeholder="Confirm your password" required>
+
+
+                <!-- Phone Field -->
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+
+                <!-- Address Field -->
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" placeholder="Enter your address">
+
+
+               <!-- File Upload Field for ID Picture -->
+<label for="profile_picture">ID Picture</label>
+<input type="file" id="profile_picture" name="profile_picture" placeholder="Choose ID picture" accept="image/*" >
+
+
+                <!-- Optional Checkbox for Updates -->
+                <!-- Optional Checkbox for Updates -->
+                <div class="receive-mail">
+                    <input type="checkbox" id="no-updates" name="no-updates" value="no-news">
+                    <label for="no-updates">I don’t want to receive email updates and related Intuit product features
+                        updates.</label>
+                </div>
+
+
+                <!-- Terms & Conditions Text -->
+                <div class="terms">
+                    <p>By creating an account, you agree to our
+                        <a href="#">Terms</a> and acknowledge the
+                        <a href="#">Global Privacy Statement</a>.
+                    </p>
+                </div>
+
+                <!-- Sign Up Button -->
+                <div class="sign-up">
+                    <input type="submit" value="Sign Up">
+                </div>
+
+            </form>
+        </div>
+
+<!-- website-wallet\client\assets\script\eye.js -->
+    </section>
+    <script src="/website-wallet/client/assets/script/eye.js"></script>
+</body>
+
+</html>
