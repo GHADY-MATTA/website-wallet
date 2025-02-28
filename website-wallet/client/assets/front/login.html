@@ -5,31 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/website-wallet/client/assets/homestyle.css">
 </head>
 
 <body>
-    <h1>Log In</h1>
-<!-- SEFACTORY 33 FSW\website-wallet\server(api)\php\login.php -->
-  
+    <!-- New container for the login form -->
+    <div class="custom-login-container">
+        <div class="custom-login-page">
+            <h1 class="custom-login-title">Log In</h1>
+            <form method="post" action="/website-wallet/server(api)/php/login.php">
+                <p class="custom-form-field">
+                    <label for="email" class="custom-label">Email</label>
+                    <input type="email" name="email" id="email" value="" required class="custom-input">
+                </p>
 
-    <form method="post" action="/website-wallet/server(api)/php/login.php">
-        <p>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email"
-                value="" required>
-        </p>
+                <p class="custom-form-field">
+                    <label for="password" class="custom-label">Password</label>
+                    <input type="password" name="password" id="password" required class="custom-input">
+                </p>
 
-        <p>
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" required>
-        </p>
-
-        <p><input type="submit" name="submit" value="LOG IN"></p>
-    </form>
+                <p class="custom-form-field">
+                    <input type="submit" name="submit" value="LOG IN" class="custom-submit-btn">
+                </p>
+            </form>
+            <button ><a href="/website-wallet/client/assets/homepage.html">back</a></button>
+        </div>
+    </div>
 </body>
 
 </html>
