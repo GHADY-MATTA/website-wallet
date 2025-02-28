@@ -1,5 +1,5 @@
 document.getElementById("searchForm").addEventListener("submit", function(e) {
-    e.preventDefault();  // Prevent the form from submitting normally
+    e.preventDefault(); // Prevent the form from submitting normally
 
     const keyword = document.getElementById("searchKeyword").value.trim();
 
@@ -16,4 +16,4 @@ document.getElementById("searchForm").addEventListener("submit", function(e) {
         document.getElementById("searchResults").innerHTML = "Please enter a keyword to search.";
     }
 });
-// SEFACTORY 33 FSW\website-wallet\server(api)\php\admin-search.php
+

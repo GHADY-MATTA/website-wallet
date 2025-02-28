@@ -16,15 +16,46 @@
     <header>
         <h1>Admin Panel</h1>
     </header>
-
-    <div class="search-container">
-        <form id="searchForm">
-            <input type="text" id="searchKeyword" name="keyword" placeholder="Search by name..." required>
+    
+    <!-- User Search Section -->
+    <div class="search-usersmail">
+        <div class="search-container">
+            <form id="searchForm">
+                <input type="text" id="searchKeyword" name="keyword" placeholder="Search by name..." required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div id="searchResults"></div>
+    </div>
+    
+    <!-- Transaction Search Section -->
+    <div class="search-transaction">
+        <form method="get" action="/website-wallet/server(api)/php/admin-transaction-search.php">
+            <input type="text" id="transactionKeyword" name="transactionKeyword" placeholder="Search by name/date" required>
             <button type="submit">Search</button>
         </form>
+        <div id="searchResults-transaction"></div>
     </div>
+    
+<!-- P2P Transaction Search Section -->
+<!-- P2P Transaction Search Section -->
+<div class="search-p2p">
+    <div class="search-container">
+        <form  method="GET" action="/website-wallet/server(api)/php/p2p-admin-search.php">
+            <input type="text" name="p2pKeyword" placeholder="Enter keyword">
+            <input type="submit" value="Submit">
+        </form>
 
-    <div id="searchResults"></div>
+    </div>
+    <div id="p2pSearchResults"></div>
+</div>
+
+
+<!-- P2P Transaction Search Section -->
+
+
+
+
 
     <script src="searchuser.js"></script>
 </body>
