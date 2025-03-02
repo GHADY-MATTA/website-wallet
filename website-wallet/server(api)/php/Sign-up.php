@@ -88,12 +88,16 @@ if(!$stmt){
 // Bind the form data to the prepared statement, including the profile picture
 $stmt->bind_param("sssssss", $_POST["username"], $_POST["email"], $password, $newsletter_preference, $_POST["phone"], $_POST["address"], $profile_picture);
 
-// Execute the query
-if($stmt->execute()){
+// Execute the query and check for success
+if ($stmt->execute()) {
+    // Include the mailer function
+    require_once __DIR__ . '/mailer-send.php';
+    // Send the welcome email
+    sendWelcomeEmail($_POST["username"], $_POST["email"]);
     echo "Sign-up successful! <a href='/website-wallet/client/assets/front/login.html'>Log in</a>";
-} else {
-    echo "Error: " . $stmt->error;
 }
+
+
 
 // website-wallet\client\assets\front\login.html 
 // Close the statement and connection
