@@ -10,13 +10,7 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-        <style>
-            th {
-                padding: 2rem;
-                /* Adds spacing around the text */
-            }
         
-            </style>
 </head>
 
 <body>
@@ -65,9 +59,9 @@
  <br>
  <br>
 
-<thead>
+<thead >
     <tr>
-        <th><strong>Transaction ID</strong></th>
+        <th ><strong>Transaction ID</strong></th>
         <th><strong>Sender User ID</strong></th>
         <th><strong>Receiver User ID</strong></th>
         <th><strong>Amount</strong></th>
@@ -78,6 +72,8 @@
 
 
 
+
+<!-- ----------------- p2p notifications -----------  -->
 <div class="live-transactions">
     <table id="liveTransactions">
         <thead>
@@ -96,8 +92,28 @@
         </tbody>
     </table>
 </div>
+<div class="transaction-table">
+    <table id="transactionTable">
+        <thead>
+            <tr>
+                <th>Transaction ID</th>
+                <th>User ID</th>
+                <th>Transaction Type</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Reference ID</th>
+                <th>Created At</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Transactions will be dynamically inserted here -->
+        </tbody>
+    </table>
+</div>
 
-<!-- ----------------- p2p notifications -----------  -->
+
+
+<script src="fetchTransactions.js"></script>
 
 
 <script src="transnoti.js"></script>
