@@ -10,6 +10,13 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     
+        <style>
+            th {
+                padding: 2rem;
+                /* Adds spacing around the text */
+            }
+        
+            </style>
 </head>
 
 <body>
@@ -54,9 +61,46 @@
 
 <!-- P2P Transaction Search Section -->
 
+<!-- ---------------- notifications------ -->
+ <br>
+ <br>
+
+<thead>
+    <tr>
+        <th><strong>Transaction ID</strong></th>
+        <th><strong>Sender User ID</strong></th>
+        <th><strong>Receiver User ID</strong></th>
+        <th><strong>Amount</strong></th>
+        <th><strong>Status</strong></th>
+        <th><strong>Created At</strong></th>
+    </tr>
+</thead>
 
 
 
+<div class="live-transactions">
+    <table id="liveTransactions">
+        <thead>
+            <tr>
+                <!-- <th>Transaction ID</th>
+                <th>Sender User ID</th>
+                <th>Receiver User ID</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Created At</th> -->
+                
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Transactions will be dynamically inserted here -->
+        </tbody>
+    </table>
+</div>
+
+<!-- ----------------- p2p notifications -----------  -->
+
+
+<script src="transnoti.js"></script>
 
     <script src="searchuser.js"></script>
 </body>

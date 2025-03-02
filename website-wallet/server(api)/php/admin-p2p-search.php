@@ -2,7 +2,13 @@
 $conn = mysqli_connect("localhost", "root", "", "usersignupWallet");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-}
+    
+} // If no keyword is provided, fetch the latest transactions
+$sql = "SELECT * FROM p2p_transactions ORDER BY created_at DESC LIMIT 10";
+
+
+
+
 
 if (isset($_GET['p2pKeyword'])) {
     $keyword = $conn->real_escape_string($_GET['p2pKeyword']);
@@ -50,3 +56,4 @@ if (isset($_GET['p2pKeyword'])) {
 }
 
 $conn->close();
+
