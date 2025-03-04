@@ -5,23 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
+    <link rel="stylesheet" href="/website-wallet\client\assets\homestyle.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <!-- <link rel="stylesheet" href="profile.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/website-wallet/client/assets/homestyle.css">
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 </head>
 
 <body>
+    <div class="nomargin"></div>
     <div class="container-profile">
-        <div class="info">
-            <h1>User Profile</h1>
-            <h2 id="greeting">Welcome, Loading...</h2>
+        <div class="info elegant-box">
+            <h1 class="big-title">User Profile</h1>
+            <h2 class="medium-title" id="greeting">Welcome, Loading...</h2>
 
-            <div class="profile-body">
+            <div class="profile-body small-title">
                 <p><strong>Username:</strong> <span id="username"><span class="loader"></span></span></p>
                 <p><strong>Email:</strong> <span id="email"><span class="loader"></span></span></p>
                 <p><strong>Phone:</strong> <span id="phone"><span class="loader"></span></span></p>
@@ -29,15 +31,16 @@
                 <!-- Added balance field here -->
                 <p><strong>Balance:</strong> <span id="balance"><span class="loader"></span></span></p>
             </div>
+            </div>
 
-            <div><button id="showP2PNumber">Show P2P Number</button>
+            <div class="elegant-box"><button class="input-btn" id="showP2PNumber">Show P2P Number</button>
                 <div id="p2pnumber_display"></div>
             </div>
 
-            <button id="logout">Logout</button>
+            <button class="back-btn elegant-box" id="logout">Logout</button>
             <!-- ------ tiers and badges here ----------------  -->
             <h1>Select Your Monthly Tier</h1>
-            <div class="tiers">
+            <div class="tiers elegant-box">
                 <!-- SEFACTORY 33 FSW\website-wallet\server(api)\php\saveTier.php -->
                 <form action="/website-wallet/server(api)/php/saveTier.php" method="post">
                     <div class="badge brown-badge">
@@ -64,30 +67,35 @@
                         </label>
                     </div>
 
-                    <button type="submit">Submit Tier</button>
+                    <button class="input-btn" type="submit">Submit Tier</button>
                 </form>
             </div>
 
             <!-- ----------------- deposit / withdrawal ----------------  -->
+            <div class="deposit elegant-box">
             <form action="/website-wallet/server(api)/php/transaction.php" method="post">
-                <label for="deposit">Deposit</label>
+                <label class="big-title" for="deposit">Deposit</label>
+
                 <!-- Dynamically insert the logged-in user ID -->
                 <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
                 <input type="number" id="deposit" name="amount" placeholder="Enter amount" min="0.01" step="0.01"
                     required>
                 <input type="hidden" name="transaction_type" value="deposit">
-                <p><input type="submit" name="deposit-submit" value="Deposit"></p>
+                <p><input type="submit" class="back-btn" name="deposit-submit" value="Deposit"></p>
             </form>
+            </div>
+            <div class="Withdrawal elegant-box">
 
             <form action="/website-wallet/server(api)/php/transaction.php" method="post">
-                <label for="withdrawal">Withdrawal</label>
+                <label class="big-title" for="withdrawal">Withdrawal</label>
                 <!-- Dynamically insert the logged-in user ID -->
                 <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
                 <input type="number" id="withdrawal" name="amount" placeholder="Enter amount" min="0.01" step="0.01"
                     required>
                 <input type="hidden" name="transaction_type" value="withdrawal">
-                <p><input type="submit" name="withdrawal-submit" value="Withdraw"></p>
+                <p><input class="back-btn" type="submit" name="withdrawal-submit" value="Withdraw"></p>
             </form>
+            </div>
 
 
 
@@ -98,38 +106,40 @@
             <!-- -----------------------P2P----------------------------  -->
 
             <!-- -----------------------P2P----------------------------  -->
+            <div class="p2p elegant-box">
             <form action="/website-wallet/server(api)/php/p2p_transaction.php" method="post">
-                <label for="send_to_user">Send To (P2P Number)</label>
+                <label class="big-title" for="send_to_user">Send To (P2P Number)</label>
                 <input type="text" id="send_to_user" name="send_to_user" placeholder="Enter recipient P2P number"
                     required>
 
-                <label for="amount">Amount</label>
+                <label class="big-title" for="amount">Amount</label>
                 <input type="number" id="amount" name="amount" placeholder="Enter amount" min="0.01" step="0.01"
                     required>
 
                 <input type="hidden" name="transaction_type" value="p2p">
 
-                <p><input type="submit" name="p2p-submit" value="Send Money"></p>
+                <p><input class="back-btn" type="submit" name="p2p-submit" value="Send Money"></p>
             </form>
+            </div>
             <!-- -----------------------edit profile----------------------------  -->
-            <div class="jquery-btn10">
+            <div class="jquery-btn10 elegant-box">
                 <form id="editProfileForm">
-                    <label for="username">Username:</label>
+                    <label class="big-title elegant-box" for="username">Username:</label>
                     <input type="text" id="username" name="username" value="<?php echo $username; ?>" required>
 
-                    <label for="email">Email:</label>
+                    <label class="big-title elegant-box" for="email">Email:</label>
                     <input type="email" id="email" name="email" value="<?php echo $email; ?>" required>
 
-                    <label for="address">Address:</label>
+                    <label class="big-title elegant-box" for="address">Address:</label>
                     <input type="text" id="address" name="address" value="<?php echo $address; ?>" required>
 
-                    <label for="phone">Phone Number:</label>
+                    <label class="big-title elegant-box" for="phone">Phone Number:</label>
                     <input type="text" id="phone" name="phone" value="<?php echo $phone; ?>" required>
 
-                    <label for="password">Password:</label>
+                    <label class="big-title elegant-box" for="password">Password:</label>
                     <input type="password" id="password" name="password" required>
-
-                    <button type="button" onclick="updateProfile()">Update Profile</button>
+                    <br>
+                    <button class="input-btn" type="button" onclick="updateProfile()">Update Profile</button>
                 </form>
                 <div id="response"></div> <!-- Make sure this element exists in the HTML -->
 

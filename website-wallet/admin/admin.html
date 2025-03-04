@@ -5,52 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Search</title>
+    <link rel="stylesheet" href="/website-wallet\client\assets\homestyle.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     
         
 </head>
 
 <body>
+    
+         
+    <section style="padding-top:10rem!;" class="admin-section">
+
+    
     <header>
-        <h1>Admin Panel</h1>
+        <h1 class="big-title">Admin Panel</h1>
     </header>
     
     <!-- User Search Section -->
-    <div class="search-usersmail">
+     <button class="input-btn" id="jquery1">search</button>
+     <div id="btn1"> 
+    <div class="search-usersmail elegant-box">
         <div class="search-container">
             <form id="searchForm" >
-                <input type="text" id="searchKeyword" name="keyword" placeholder="Search by name..." required>
-                <button type="submit">Search</button>
+                <input   type="text" id="searchKeyword" name="keyword" placeholder="Search by name..." required>
+                <button class="back-btn" type="submit">Search</button>
             </form>
         </div>
         <div id="searchResults"></div>
     </div>
-    
+    </div>
+    <button class="input-btn" id="jquery2">transaction</button>
+    <div id="btn2">
     <!-- Transaction Search Section -->
-    <div class="search-transaction">
+    <div class="search-transaction elegant-box">
         <form method="get" action="/website-wallet/server(api)/php/admin-transaction-search.php">
             <input type="text" id="transactionKeyword" name="transactionKeyword" placeholder="Search by name/date" required>
-            <button type="submit">Search</button>
+            <button class="back-btn" type="submit">Search</button>
         </form>
         <div id="searchResults-transaction"></div>
+    </div>
     </div>
     
 <!-- P2P Transaction Search Section -->
 <!-- P2P Transaction Search Section -->
-<div class="search-p2p">
+ <button class="input-btn" id="jquery3">p2pKeyword</button>
+ <div id="btn3">
+<div class="search-p2p elegant-box">
     <div class="search-container">
         <form  method="GET" action="/website-wallet/server(api)/php/p2p-admin-search.php">
             <input type="text" name="p2pKeyword" placeholder="Enter keyword">
-            <input type="submit" value="Submit">
+            <input class="back-btn"  type="submit" value="Search">
         </form>
 
     </div>
     <div id="p2pSearchResults"></div>
 </div>
-<button onclick="window.history.back()">Back</button>
+</div>
+<button class="back-btn " onclick="window.history.back()">Back</button>
 
 
 <!-- P2P Transaction Search Section -->
@@ -59,7 +74,7 @@
  <br>
  <br>
 
-<thead >
+<thead class="elegant-box">
     <tr>
         <th ><strong>Transaction ID</strong></th>
         <th><strong>Sender User ID</strong></th>
@@ -74,7 +89,7 @@
 
 
 <!-- ----------------- p2p notifications -----------  -->
-<div class="live-transactions">
+<div class="live-transactions elegant-box">
     <table id="liveTransactions">
         <thead>
             <tr>
@@ -92,7 +107,7 @@
         </tbody>
     </table>
 </div>
-<div class="transaction-table">
+<div class="transaction-table elegant-box">
     <table id="transactionTable">
         <thead>
             <tr>
@@ -110,11 +125,46 @@
         </tbody>
     </table>
 </div>
+<div class="export-data">
+    <button class="input-btn" id="exportBtn">Export Database</button>
+</div>
+</section>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+     $(document).ready(function () {
+            // Particle animation
+           
+
+            // Button interactions
+            $("#jquery1").on('click', function () {
+                $("#btn1").toggle(1000, function () {
+                    $(this).css({ opacity: 1 });
+                });
+            });
+
+            // Button interactions
+         $("#jquery2").on('click', function () {
+             $("#btn2").toggle(1000, function () {
+                 $(this).css({ opacity: 1 });
+             });
+         });
+         $("#jquery3").on('click', function () {
+             $("#btn3").toggle(1000, function () {
+                 $(this).css({ opacity: 1 });
+             });
+         });
 
 
- <div class="export-data">
-    <button id="exportBtn">Export Database</button>
- </div>
+            
+        });
+
+
+   
+        </script>
+
+
+ 
 
 <script src="exportBtn.js"></script>
 
