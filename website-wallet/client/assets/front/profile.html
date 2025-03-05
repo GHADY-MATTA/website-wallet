@@ -6,17 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
     <link rel="stylesheet" href="/website-wallet\client\assets\homestyle.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-    <!-- <link rel="stylesheet" href="profile.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 </head>
 
 <body>
+    <div class="profile-css">
     <div class="nomargin"></div>
     <div class="container-profile">
         <div class="info elegant-box">
@@ -40,8 +37,8 @@
             <button class="back-btn elegant-box" id="logout">Logout</button>
             <div class="elegant-box">
                 <h1>Gemini API Integration</h1>
-                <input type="text" id="inputText" placeholder="Enter your text here" />
-                <button onclick="sendToGemini()">Send</button>
+                <input class="input-css" type="text" id="inputText" placeholder="Enter your text here" /><br></br>
+                <button class="back-btn" onclick="sendToGemini()">Send</button>
                 
                 <div id="response">
                     <p><strong>Response:</strong></p>
@@ -61,7 +58,7 @@
                             <i class="fas fa-medal"></i>
                             <p>Brown 3$</p>
                         </label>
-                    </div>
+                    </div><br></br>
 
                     <div class="badge silver-badge">
                         <input type="radio" id="tier_silver" name="tier" value="silver">
@@ -69,7 +66,7 @@
                             <i class="fas fa-medal"></i>
                             <p>Silver 6$</p>
                         </label>
-                    </div>
+                    </div><br></br>
 
                     <div class="badge gold-badge">
                         <input type="radio" id="tier_gold" name="tier" value="gold">
@@ -77,7 +74,7 @@
                             <i class="fas fa-medal"></i>
                             <p>Gold 9$</p>
                         </label>
-                    </div>
+                    </div><br></br>
 
                     <button class="input-btn" type="submit">Submit Tier</button>
                 </form>
@@ -89,9 +86,9 @@
                 <label class="big-title" for="deposit">Deposit</label>
 
                 <!-- Dynamically insert the logged-in user ID -->
-                <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
-                <input type="number" id="deposit" name="amount" placeholder="Enter amount" min="0.01" step="0.01"
-                    required>
+                <input  type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
+                <input class="input-css" type="number" id="deposit" name="amount" placeholder="Enter amount" min="0.01" step="0.01"
+                    required><br></br>
                 <input type="hidden" name="transaction_type" value="deposit">
                 <p><input type="submit" class="back-btn" name="deposit-submit" value="Deposit"></p>
             </form>
@@ -103,7 +100,7 @@
                 <!-- Dynamically insert the logged-in user ID -->
                 <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
                 <input type="number" id="withdrawal" name="amount" placeholder="Enter amount" min="0.01" step="0.01"
-                    required>
+                    required><br></br>
                 <input type="hidden" name="transaction_type" value="withdrawal">
                 <p><input class="back-btn" type="submit" name="withdrawal-submit" value="Withdraw"></p>
             </form>
@@ -121,12 +118,12 @@
             <div class="p2p elegant-box">
             <form action="/website-wallet/server(api)/php/p2p_transaction.php" method="post">
                 <label class="big-title" for="send_to_user">Send To (P2P Number)</label>
-                <input type="text" id="send_to_user" name="send_to_user" placeholder="Enter recipient P2P number"
-                    required>
+                <input class="input-css" type="text" id="send_to_user" name="send_to_user" placeholder="Enter recipient P2P number"
+                    required> <br></br>
 
                 <label class="big-title" for="amount">Amount</label>
-                <input type="number" id="amount" name="amount" placeholder="Enter amount" min="0.01" step="0.01"
-                    required>
+                <input class="input-css" type="number" id="amount" name="amount" placeholder="Enter amount" min="0.01" step="0.01"
+                    required> <br></br>
 
                 <input type="hidden" name="transaction_type" value="p2p">
 
@@ -134,28 +131,30 @@
             </form>
             </div>
             <!-- -----------------------edit profile----------------------------  -->
+             
             <div class="jquery-btn10 elegant-box">
                 <form id="editProfileForm">
                     <label class="big-title elegant-box" for="username">Username:</label>
-                    <input type="text" id="username" name="username" value="<?php echo $username; ?>" required>
+                    <input class="input-css" type="text" id="username" name="username" value="" required>
 
                     <label class="big-title elegant-box" for="email">Email:</label>
-                    <input type="email" id="email" name="email" value="<?php echo $email; ?>" required>
+                    <input class="input-css" type="email" id="email" name="email" value="" required>
 
                     <label class="big-title elegant-box" for="address">Address:</label>
-                    <input type="text" id="address" name="address" value="<?php echo $address; ?>" required>
+                    <input class="input-css" type="text" id="address" name="address" value="" required>
 
                     <label class="big-title elegant-box" for="phone">Phone Number:</label>
-                    <input type="text" id="phone" name="phone" value="<?php echo $phone; ?>" required>
+                    <input class="input-css" type="text" id="phone" name="phone" value="" required>
 
-                    <label class="big-title elegant-box" for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
-                    <br>
+                    <label class="big-title elegant-box" for="password">Password:</label><br>
+                    <input class="input-css" type="password" id="password" name="password" value="" required>
+                    <br></br>
                     <button class="input-btn" type="button" onclick="updateProfile()">Update Profile</button>
-                </form>
+                </form> <br></br>
                 <div id="response"></div> <!-- Make sure this element exists in the HTML -->
 
 
+            </div>
             </div>
             <script src="/website-wallet/client/assets/script/giminibot.js"></script>
 

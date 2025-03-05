@@ -9,22 +9,71 @@
 
 /* Body Styling (Unified) */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f8f8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: 'Arial', sans-serif !important;
+    background-color: #fdfdfd t;
+    display: flex ;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: 100vh !important;
     color: black;
 }
+
+
+.admin-section{
+    margin-top:0rem !important;
+    width: 95%;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+
 .div-form{
     width: 100%;
     display: flex;
         flex-direction: column;
-        border: 1px solid red;
+      
         justify-self: center;
         align-self: center;
 }
+.profile-css{
+    display: flex;
+    width: 80%;
+}
+
+
+.input-css{
+    width: 100%;
+    
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    /* Dark text for contrast */
+    background: #fff;
+    /* White background */
+    border: 2px solid #000 !important;
+    /* Black border */
+    border-radius: 8px;
+    /* Smooth edges */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    /* Soft shadow */
+    transition: all 0.3s ease-in-out;
+    outline: none;
+}
+.noti-btn{
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    align-items: center;
+
+}
+
+.input-css:focus {
+    border-color: #444;
+    /* Slightly lighter black on focus */
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3);
+    /* Stronger shadow on focus */
+}
+
 
 /* ----------------admin--------------  */
 .live-transactions,
@@ -59,46 +108,35 @@ body {
 }
  
 
- .big-title {}
+.div-form1 form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 
- .search-usersmail {}
-
- .elegant-box {}
-
- .search-container {}
-
- .input-btn {}
-
- .search-transaction {}
-
- .back-btn {}
-
- .search-p2p {}
-
- .live-transactions {}
-
- .transaction-table {}
-
- .export-data {}
+}
 
 /* -----------------------signup---------------- */
 .signup-section{
-    display: flex!important;
-    flex-direction: column!important;
-    flex-wrap: wrap!important;
-    align-items: center!important;
-    justify-content: center!important;
-    margin-top:100vh!important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
 
 }
+.body-container{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    border: 1px solid red;
+}
+
 .backbtn1{
     display: flex;
     width: 70%;
 }
-.signup-section input{
-    width: 70% !important;
-}
+
 /* --------------------- signup ------------------  */
 /* Home Page Content */
 .home-page-content {
@@ -251,6 +289,7 @@ body {
     padding: 1.5rem !important;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
     transition: all 0.3s ease-in-out !important;
+    margin: 1rem !important;
 }
 
 /* Hover Effect */
@@ -259,7 +298,45 @@ body {
     transform: translateY(-5px) !important;
 }
 
+/* ----------------- tables-------------------  */
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    background: #fff;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+}
+
+th,
+td {
+    padding: 12px 16px;
+    /* Adds spacing inside each cell */
+    border-bottom: 1px solid #ddd;
+    /* Light gray border */
+}
+
+th {
+    background: #000;
+    /* Black header */
+    color: #fff;
+    /* White text */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+    /* Alternating row colors */
+}
+
+tr:hover {
+    background: #f1f1f1;
+    /* Highlight row on hover */
+}
 
 
 /* Buttons */
@@ -560,17 +637,38 @@ form input[type="submit"] {
 
 /* For devices with a width between 400px and 600px */
 @media screen and (max-width: 600px) and (min-width: 400px) {
-    .signup-section {
-            width: 100% !important;
-            display: flex !important;
-            flex-direction: column !important;
-            flex-wrap: wrap !important;
-            align-items: center !important;
-            justify-content: center !important;
-            margin:100vh !important;
+    .admin-section {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        background-color: red !important;
+
+    }
     
+        .big-title {}
     
-        }
+        .input-btn {}
+    
+        .search-usersmail {}
+    
+        .elegant-box {}
+    
+        .search-container {}
+    
+        .back-btn {}
+    
+        .search-transaction {}
+    
+        .search-p2p {}
+    
+        .live-transactions {}
+    
+        .transaction-table {}
+    
+        .export-data {}
+    
+        .testing-js {}
+    
     .home-page-content {
         flex-direction: column;
         width: 100%;
@@ -622,18 +720,7 @@ form input[type="submit"] {
 
 /* For devices with a width of 450px or smaller */
 @media screen and (max-width: 450px) {
-    .signup-section {
-        width: 100% !important;
-        min-height:200vh !important;
-            display: flex !important;
-            flex-direction: column !important;
-            flex-wrap: wrap !important;
-            align-items: center !important;
-            justify-content: center !important;
-            margin-top: -200vh !important;
     
-    
-        }
     .home-page-content {
         flex-direction: column;
         width: 100%;
@@ -686,3 +773,4 @@ form input[type="submit"] {
         font-size: 0.9rem;
     }
 }
+

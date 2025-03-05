@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="/website-wallet\client\assets\homestyle.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
 </head>
 
@@ -26,21 +23,21 @@
         </div>
 
         <div class="mini-title">
-            <h5 class="medium-title">Create a Free Account or <a href="login.html">Log in</a></h5>
+            <h5 class="medium-title">Create a Free Account or <a class="back-btn" href="login.html">Log in</a></h5>
         </div>
         <!-- \website-wallet\server(api)\php\Sign-up.php -->
-        <div class="div-form elegant-box">
+        <div class="div-form1 elegant-box">
             <form action="/website-wallet/server(api)/php/Sign-up.php" method="post" enctype="multipart/form-data"
                 novalidate>
 
                 <!-- Username Field -->
                 <label class="medium-title " for="username">Username</label>
-                <input class="input-wid" type="text" id="username" name="username" placeholder="Enter your username"
+                <input class="input-css" type="text" id="username" name="username" placeholder="Enter your username"
                     required>
 
                 <!-- Email Field -->
                 <label class="medium-title" for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="yourname@example.com" required>
+                <input class="input-css" type="email" id="email" name="email" placeholder="yourname@example.com" required>
 
                 <!-- Password Field -->
 
@@ -48,28 +45,28 @@
                     <label class="medium-title" for="password">Password</label>
                     <!-- Eye Icon to toggle password visibility -->
                     <i class="far fa-eye" id="eye-icon" onclick="togglePassword()"></i>
-                    <input type="password" id="password" name="password"
+                    <input class="input-css" type="password" id="password" name="password"
                         placeholder="At least 8 characters, 1 number, 1 uppercase, 1 special character" required>
 
                 </div>
                 <!-- Password Confirmation Field-->
                 <label class="medium-title" for="password_confirmation">Confirm Password</label>
-                <input type="password" id="password_confirmation" name="password_confirmation"
+                <input class="input-css" type="password" id="password_confirmation" name="password_confirmation"
                     placeholder="Confirm your password" required>
 
 
                 <!-- Phone Field -->
                 <label class="medium-title" for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                <input class="input-css" type="tel" id="phone" name="phone" placeholder="Enter your phone number">
 
                 <!-- Address Field -->
                 <label class="medium-title" for="address">Address</label>
-                <input type="text" id="address" name="address" placeholder="Enter your address">
+                <input class="input-css"  type="text" id="address" name="address" placeholder="Enter your address">
 
 
                 <!-- File Upload Field for ID Picture -->
                 <label class="medium-title" for="profile_picture">ID Picture</label>
-                <input type="file" id="profile_picture" name="profile_picture" placeholder="Choose ID picture"
+                <input class="input-css" type="file" id="profile_picture" name="profile_picture" placeholder="Choose ID picture"
                     accept="image/*">
 
 
@@ -97,7 +94,7 @@
                 </div>
 
             </form>
-            <div class="backbtn1">
+            <div class="">
                 <button class="input-btn" onclick="window.history.back()">Back</button>
             </div>
 

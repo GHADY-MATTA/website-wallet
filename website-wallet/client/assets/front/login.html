@@ -7,10 +7,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="/website-wallet\client\assets\homestyle.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     
 </head>
 
@@ -22,18 +19,18 @@
             <form method="post" action="/website-wallet/server(api)/php/login.php">
                 <p class="custom-form-field">
                     <label for="email" class="medium-title">Email</label>
-                    <input type="email" name="email" id="email" value="" required class="custom-input">
+                    <input class="input-css" type="email" name="email" id="email" value="" required class="custom-input">
                 </p>
 
                 <p class="custom-form-field">
                     <label for="password" class="custom-label medium-title">Password</label>
-                    <input type="password" name="password" id="password" required class="custom-input">
-                </p>
+                    <input class="input-css"  type="password" name="password" id="password" required class="custom-input">
+                </p> <br>
 
                 <p class="custom-form-field">
                     <input type="submit" name="submit" value="LOG IN" class="input-btn">
                 </p>
-            </form>
+            </form> <br>
             <button class="back-btn" ><a href="/website-wallet/client/assets/homepage.html">back</a></button>
         </div>
     </div>
