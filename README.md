@@ -6,7 +6,7 @@ Hosting Details (Mandatory)
 Local URL: http://localhost/website-wallet/client/assets/homepage.html
 External URL: https://5255ghady5255.ip-ddns.com/
 IP Address: 35.180.75.140
-GitHub Pages URL: GitHub Repository
+GitHub Pages URL: GitHub Repository  https://github.com/GHADY-MATTA/website-wallet
 Component Diagram (Bonus with respect)
 Refer to the component diagram below for an overview of the major components of the application and their interactions.
 
