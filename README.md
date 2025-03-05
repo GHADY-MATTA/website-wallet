@@ -24,20 +24,20 @@ Gemini API: An API for interacting with the Gemini cryptocurrency exchange, prov
 MailComposer: A tool used for composing and sending emails via an SMTP server. In this project, it is used to manage email sending features.
 
 MailComposer Documentation
-api documentation ----------------------------------------------------------------------------------------------:
+api documentation ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:
 Connection.php: Database class: Handles MySQL connection. 
 
 Constructor: Establishes connection to the usersignupWallet database. 
 
 getConnection(): Returns the established connection
-api documentation ----------------------------------------------------------------------------------------------:
+api documentation ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:
 
 TransactionSearchAPI:
 Key Points:
 Constructor: Accepts a database connection.
 searchTransactions($keyword): Searches the transactions table for the keyword in multiple columns.
 Output: Displays the matching transactions in a table if results are found, or shows "No results found."
-api documentation ----------------------------------------------------------------------------------------------:
+api documentation ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:
 TransactionSearchA
 <?php
 require_once('../../admin/generals/connection.php'); // Include the database connection
@@ -70,7 +70,7 @@ Transaction Search: Initializes the TransactionSearchAPI class and calls searchT
 Connection Closure: Closes the database connection after the search.
 This script will perform the search when the transactionKeyword is passed as a GET parameter.
 
-api documentation ----------------------------------------------------------------------------------------------:
+api documentation ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:
 
 
 
@@ -79,7 +79,7 @@ Key Points:
 Constructor: Takes a database connection.
 searchTransactions($keyword): Searches the p2p_transactions table for rows matching the provided keyword in various columns.
 Output: Displays matching transactions in an HTML table with horizontal scroll.
-api documentation ----------------------------------------------------------------------------------------------:
+api documentation ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:
 <?php P2PTransactionAPI
 require_once('../../admin/generals/connection.php'); // Include the database connection
 require_once('../../admin/generals/P2PTransactionAPI.php'); // Include the P2PTransactionAPI class
@@ -110,4 +110,4 @@ Search: The searchTransactions() method of the P2PTransactionAPI class is called
 Connection Close: After the transaction search, the database connection is closed.
 This code will search P2P transactions based on the provided keyword from the URL and output the results.
 
-api documentation ----------------------------------------------------------------------------------------------:
+api documentation ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:
