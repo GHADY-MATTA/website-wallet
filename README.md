@@ -1,16 +1,15 @@
 Project Name: Website Wallet
-ER Diagram (Mandatory)
-unfinished
 
-Hosting Details (Mandatory)
+
+Hosting Details 
 Local URL: http://localhost/website-wallet/client/assets/homepage.html
 External URL: https://5255ghady5255.ip-ddns.com/
 IP Address: 35.180.75.140
 GitHub Pages URL: GitHub Repository  https://github.com/GHADY-MATTA/website-wallet
-Component Diagram (Bonus with respect)
+Component Diagram 
 Refer to the component diagram below for an overview of the major components of the application and their interactions.
 
-API Documentation (Mandatory)
+API Documentation 
 The following external APIs are utilized in this project:
 
 jQuery CDN: A popular JavaScript library used for simplifying DOM manipulation, event handling, and AJAX requests. It is included via CDN for easier accessibility and faster integration.
