@@ -38,6 +38,18 @@
             </div>
 
             <button class="back-btn elegant-box" id="logout">Logout</button>
+            <div class="elegant-box">
+                <h1>Gemini API Integration</h1>
+                <input type="text" id="inputText" placeholder="Enter your text here" />
+                <button onclick="sendToGemini()">Send</button>
+                
+                <div id="response">
+                    <p><strong>Response:</strong></p>
+                    <p id="responseText"></p>
+                </div>
+
+
+            </div>
             <!-- ------ tiers and badges here ----------------  -->
             <h1>Select Your Monthly Tier</h1>
             <div class="tiers elegant-box">
@@ -145,6 +157,8 @@
 
 
             </div>
+            <script src="/website-wallet/client/assets/script/giminibot.js"></script>
+
 
             <script src="/website-wallet/client/assets/script/showp2p.js"></script>
             <script src="/website-wallet/client/assets/script/profile.js"></script>
