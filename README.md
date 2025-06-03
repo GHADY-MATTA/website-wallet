@@ -1,113 +1,130 @@
-Project Name: Website Wallet
+# 💳 Website Wallet - A Full-Stack Digital Wallet Platform
 
+A fully functional and secure **Digital Wallet Platform** built using **HTML**, **CSS**, **JavaScript**, **PHP**, and **MySQL**. This project showcases a professional-grade web application that includes financial services like deposits, withdrawals, identity verification, peer-to-peer payments, and more, all backed by a robust backend API and dynamic frontend interface.
 
-Hosting Details 
-Local URL: http://localhost/website-wallet/client/assets/homepage.html
-External URL: https://5255ghady5255.ip-ddns.com/
-IP Address: 35.180.75.140
-GitHub Pages URL: GitHub Repository  https://github.com/GHADY-MATTA/website-wallet
-Component Diagram 
-Refer to the component diagram below for an overview of the major components of the application and their interactions.
+---
 
-API Documentation 
-The following external APIs are utilized in this project:
+## 🌟 Features
 
-jQuery CDN: A popular JavaScript library used for simplifying DOM manipulation, event handling, and AJAX requests. It is included via CDN for easier accessibility and faster integration.
+| Feature                  | Description                                              |
+| ------------------------ | -------------------------------------------------------- |
+| ✉️ Account Creation      | Register via email, phone number, or social logins       |
+| 📅 Identity Verification | Upload ID documents for automatic or manual verification |
+| 👤 Profile Management    | View/update name, address, contact info                  |
+| ⚠️ Account Limits        | Daily/weekly/monthly transaction limits by user tier     |
+| 💸 Deposit/Withdrawal    | Secure wallet loading and withdrawal to bank or card     |
+| 🚚 P2P Transfers         | Internal wallet-to-wallet transfers                      |
+| ⏰ Scheduled Payments     | One-time or recurring payment scheduling                 |
+| ⬛ QR Payments            | Generate/scan QR codes for in-store transactions         |
+| 📢 Notifications         | Real-time alerts for all wallet activities               |
+| 📊 Transaction History   | Filterable & exportable statements                       |
+| ✉️ Self-Service Tools    | Password reset, profile updates, card controls           |
+| ⚖️ Public API            | Developer-friendly documentation for integrations        |
+| 💬 Help Center           | FAQs, tutorials, and onboarding guides                   |
+| 📩 Support System        | Live chat and ticketing for customer support             |
+| 🔍 System Logs           | Admin logging for audit and monitoring                   |
+| 📊 Analytics Dashboard   | User, transaction, and growth metrics                    |
+| 📅 Reports               | Export custom reports (CSV, PDF)                         |
+| 📥 Backups               | Automated, encrypted database backups                    |
 
-jQuery CDN Documentation
-Axios: A promise-based HTTP client for the browser and Node.js. Axios is used in this project to handle HTTP requests and responses in an easy and streamlined manner.
+---
 
-Axios Documentation
-Gemini API: An API for interacting with the Gemini cryptocurrency exchange, providing access to real-time price data and other exchange functionalities.
+## 🧰 Tech Stack
 
-[Gemini API Documentation](https:// Gemini.com)
-MailComposer: A tool used for composing and sending emails via an SMTP server. In this project, it is used to manage email sending features.
+* **Frontend**: HTML, CSS, JavaScript, jQuery, Axios
+* **Backend**: PHP (OOP), RESTful APIs
+* **Database**: MySQL (usersignupWallet)
+* **External APIs**: Gemini API, MailComposer, jQuery CDN
 
-MailComposer Documentation
-api documentation ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:
-Connection.php: Database class: Handles MySQL connection. 
+---
 
-Constructor: Establishes connection to the usersignupWallet database. 
+## 📁 Hosting & Access
 
-getConnection(): Returns the established connection
-api documentation ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:
+| Type            | URL                                                                |
+| --------------- | ------------------------------------------------------------------ |
+| **Local**       | `http://localhost/website-wallet/client/assets/homepage.html`      |
+| **External**    | `https://5255ghady5255.ip-ddns.com/`                               |
+| **Public IP**   | `35.180.75.140`                                                    |
+| **GitHub Repo** | [GitHub Repository](https://github.com/GHADY-MATTA/website-wallet) |
 
-TransactionSearchAPI:
-Key Points:
-Constructor: Accepts a database connection.
-searchTransactions($keyword): Searches the transactions table for the keyword in multiple columns.
-Output: Displays the matching transactions in a table if results are found, or shows "No results found."
-api documentation ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:
-TransactionSearchA
-<?php
-require_once('../../admin/generals/connection.php'); // Include the database connection
-require_once('../../admin/generals/TransactionSearchAPI.php'); // Include the TransactionSearchAPI class
+---
 
-// Check if a transaction search keyword is provided via GET
-if (isset($_GET['transactionKeyword'])) {
-    // Get the database connection
-    $conn = $db->getConnection();
-    
-    // Create an instance of the TransactionSearchAPI class
-    $api = new TransactionSearchAPI($conn);
-    
-    // Search transactions based on the provided keyword
-    $api->searchTransactions($_GET['transactionKeyword']);
-    
-    // Close the database connection after the search
-    $conn->close();
-} else {
-    // Output message if no search keyword is provided
-    echo "No search keyword provided.";
+## 📊 Component Diagram
+
+```mermaid
+graph TD
+    A[Frontend (HTML/CSS/JS)] -->|Axios, jQuery| B[PHP API Layer]
+    B --> C[MySQL Database]
+    B --> D[Gemini API]
+    B --> E[MailComposer SMTP]
+    B --> F[Transaction APIs]
+    B --> G[P2P Transactions API]
+```
+
+---
+[Screenshot](/image.png)
+[Screenshot](/website-wallet/wallet-Diagram.drawio.png)
+## 🔧 API Documentation
+
+### Database Connection
+
+```php
+// connection.php
+class Database {
+    public function getConnection() {
+        // returns PDO connection
+    }
 }
+```
 
+### TransactionSearchAPI
 
-Key Points:
-Includes: The script includes the database connection and the TransactionSearchAPI class.
-GET Check: It checks if a transactionKeyword is provided through the URL.
-Database Connection: Establishes the connection to the database using $db->getConnection().
-Transaction Search: Initializes the TransactionSearchAPI class and calls searchTransactions() with the provided keyword.
-Connection Closure: Closes the database connection after the search.
-This script will perform the search when the transactionKeyword is passed as a GET parameter.
+```php
+searchTransactions($keyword):
+// Searches 'transactions' table for keyword match
+// Outputs results in HTML table or "No results found."
+```
 
-api documentation ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:
+### P2PTransactionAPI
 
+```php
+searchTransactions($keyword):
+// Searches 'p2p_transactions' table
+// Outputs matching records in a scrollable table
+```
 
+---
 
-P2PTransactionAPI
-Key Points:
-Constructor: Takes a database connection.
-searchTransactions($keyword): Searches the p2p_transactions table for rows matching the provided keyword in various columns.
-Output: Displays matching transactions in an HTML table with horizontal scroll.
-api documentation ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:
-<?php P2PTransactionAPI
-require_once('../../admin/generals/connection.php'); // Include the database connection
-require_once('../../admin/generals/P2PTransactionAPI.php'); // Include the P2PTransactionAPI class
+## 📢 How to Use
 
-// Check if a p2p search keyword is provided via GET
-if (isset($_GET['p2pKeyword'])) {
-    // Get the database connection
-    $conn = $db->getConnection();
-    
-    // Create an instance of the P2PTransactionAPI class
-    $api = new P2PTransactionAPI($conn);
-    
-    // Search P2P transactions based on the provided keyword
-    $api->searchTransactions($_GET['p2pKeyword']);
-    
-    // Close the database connection after the search
-    $conn->close();
-} else {
-    // Output message if no search keyword is provided
-    echo "No search keyword provided.";
-}
-?>
-Key Points:
-Includes: It includes the connection.php file for database access and the P2PTransactionAPI.php class.
-GET Check: The script checks if the p2pKeyword parameter is provided via the URL.
-Database Connection: The connection is established using $db->getConnection().
-Search: The searchTransactions() method of the P2PTransactionAPI class is called with the p2pKeyword.
-Connection Close: After the transaction search, the database connection is closed.
-This code will search P2P transactions based on the provided keyword from the URL and output the results.
+1. **Clone the Project**
 
-api documentation ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:
+   ```bash
+   git clone https://github.com/GHADY-MATTA/website-wallet
+   cd website-wallet
+   ```
+2. **Setup Localhost (XAMPP/WAMP)**
+
+   * Import the SQL file into MySQL.
+   * Update DB credentials in `connection.php`.
+3. **Test APIs** via browser or tools like Postman.
+4. **Try Demo URLs** above for hosted version.
+
+---
+
+## 🤝 Contribution
+
+Pull requests are welcome! Please open issues for feature requests or bug reports.
+
+---
+
+## 📄 License
+
+MIT License
+
+---
+
+## 👨‍💼 Author
+
+Developed by **Ghady Matta**
+Passionate about secure fintech and modern web systems.
