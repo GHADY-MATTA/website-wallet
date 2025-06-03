@@ -64,8 +64,9 @@ graph TD
 ```
 
 ---
-[Screenshot](/image.png)
-[Screenshot](/website-wallet/wallet-Diagram.drawio.png)
+![Landing](/image.png)
+![Landing](/website-wallet/wallet-Diagram.drawio.png)
+
 ## 🔧 API Documentation
 
 ### Database Connection
