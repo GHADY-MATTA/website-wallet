@@ -53,23 +53,12 @@ A fully functional and secure **Digital Wallet Platform** built using **HTML**, 
 
 ## 📊 Component Diagram
 
-```mermaid
-graph TD
-    A[Frontend (HTML/CSS/JS)]
-    B[PHP API Layer]
-    C[MySQL Database]
-    D[Gemini API]
-    E[MailComposer SMTP]
-    F[Transaction APIs]
-    G[P2P Transactions API]
-
-    A --> B
-    B --> C
-    B --> D
-    B --> E
-    B --> F
-    B --> G
-
+    A[Frontend (HTML/CSS/JS)] -->|Axios, jQuery| B[PHP API Layer]
+    B --> C[MySQL Database]
+    B --> D[Gemini API]
+    B --> E[MailComposer SMTP]
+    B --> F[Transaction APIs]
+    B --> G[P2P Transactions API]
 ```
 
 ---
